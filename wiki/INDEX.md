@@ -4,4 +4,4 @@ This file should link research notes, explanations, and decisions for Farming_Au
 
 ## Pages
 
--
+- [Simplest First Automation Decision](pages/simplest-first-automation-decision.md)
