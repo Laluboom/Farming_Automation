@@ -1,15 +1,16 @@
 {
-  "date": "2026-06-04",
+  "date": "2026-06-06",
   "selected_folder": "Farming_Automation",
   "main_question_file": "main_question.md",
-  "today_sub_question": "Which farm decision is simplest to automate first in a low-cost beginner prototype?",
+  "today_sub_question": "What is the smallest input set and yes-or-no decision rule for a beginner irrigation prototype?",
   "files_changed": [
-    "wiki/pages/simplest-first-automation-decision.md",
+    "wiki/pages/minimum-inputs-irrigation-prototype.md",
     "wiki/INDEX.md",
     "research_reports/latest_report.md",
-    "research_reports/run_logs/2026-06-04.md",
+    "research_reports/run_logs/2026-06-06.md",
     "research_reports/last_run.json"
   ],
-  "web_research_used": false,
-  "exact_next_baby_step": "Define the smallest input set and decision rule for an irrigation prototype page, using only one crop and one growing area."
+  "web_research_used": true,
+  "exact_next_baby_step": "Pick one crop and one growing area, then define a first soil-moisture threshold and a simple \"meaningful rain\" cutoff for the rule.",
+  "git_action": "deferred to sync job"
 }
