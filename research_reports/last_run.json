@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-07",
+  "date": "2026-06-09",
   "selected_folder": "Farming_Automation",
   "main_question_file": "main_question.md",
-  "today_sub_question": "What first soil-moisture threshold and rain-delay cutoff can a beginner use for an outdoor tomato drip-irrigation prototype in loam soil?",
+  "today_sub_question": "What first sensor depth should a beginner use for an outdoor tomato drip-irrigation prototype in loam soil?",
   "files_changed": [
-    "wiki/pages/first-threshold-for-outdoor-tomato-irrigation.md",
+    "wiki/pages/first-sensor-depth-for-outdoor-tomato-irrigation.md",
     "wiki/INDEX.md",
     "research_reports/latest_report.md",
-    "research_reports/run_logs/2026-06-07.md",
+    "research_reports/run_logs/2026-06-09.md",
     "research_reports/last_run.json"
   ],
   "web_research_used": true,
-  "exact_next_baby_step": "Choose one exact tomato setup such as a raised bed or small field bed, then define the first sensor depth and one simple irrigation runtime after the 25 to 30 centibar trigger.",
+  "exact_next_baby_step": "Choose one exact tomato setup such as a raised bed or small field bed, then define one beginner-friendly drip runtime rule that pairs with the 25 to 30 centibar trigger and the 6-inch starter sensor.",
   "git_action": "deferred to sync job"
 }
