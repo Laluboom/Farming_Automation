@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "selected_folder": "Farming_Automation",
   "main_question_file": "main_question.md",
-  "today_sub_question": "What exact drip tape specification should a beginner use first for the current outdoor tomato irrigation prototype?",
+  "today_sub_question": "What exact drip-tape wall thickness should a beginner use first for the current outdoor tomato irrigation prototype?",
   "files_changed": [
-    "wiki/pages/first-drip-tape-specification-for-outdoor-tomato-irrigation-prototype.md",
+    "wiki/pages/first-wall-thickness-for-outdoor-tomato-drip-tape-prototype.md",
     "wiki/INDEX.md",
     "research_reports/latest_report.md",
-    "research_reports/run_logs/2026-06-13.md",
+    "research_reports/run_logs/2026-06-14.md",
     "research_reports/last_run.json"
   ],
   "web_research_used": true,
-  "exact_next_baby_step": "Choose one exact wall thickness for the starter drip tape so the prototype has a fully specified first irrigation line.",
+  "exact_next_baby_step": "Choose one canonical tomato bed layout for the prototype so the irrigation rule, tape choice, and sensor placement all refer to the same physical setup.",
   "git_action": "deferred to sync job"
 }
