@@ -4,6 +4,7 @@ This file should link research notes, explanations, and decisions for Farming_Au
 
 ## Pages
 
+- [Canonical Bed Layout For A Beginner Outdoor Tomato Irrigation Prototype](pages/canonical-bed-layout-for-beginner-outdoor-tomato-irrigation-prototype.md)
 - [First Drip Tape Specification For An Outdoor Tomato Irrigation Prototype](pages/first-drip-tape-specification-for-outdoor-tomato-irrigation-prototype.md)
 - [First Wall Thickness For An Outdoor Tomato Drip Tape Prototype](pages/first-wall-thickness-for-outdoor-tomato-drip-tape-prototype.md)
 - [First Recheck Rule After A Tomato Drip-Irrigation Event](pages/first-recheck-rule-after-a-tomato-drip-irrigation-event.md)
