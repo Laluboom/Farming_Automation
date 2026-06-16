@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-15",
+  "date": "2026-06-16",
   "selected_folder": "Farming_Automation",
   "main_question_file": "main_question.md",
-  "today_sub_question": "What single physical tomato bed layout should the course assume first so the existing beginner drip-irrigation rules refer to one clear setup?",
+  "today_sub_question": "What should version one log for the beginner tomato irrigation prototype: only daily sensor readings, or also irrigation runtime and rainfall adjustment?",
   "files_changed": [
-    "wiki/pages/canonical-bed-layout-for-beginner-outdoor-tomato-irrigation-prototype.md",
+    "wiki/pages/first-logging-boundary-for-beginner-tomato-irrigation-prototype.md",
     "wiki/INDEX.md",
     "research_reports/latest_report.md",
-    "research_reports/run_logs/2026-06-15.md",
+    "research_reports/run_logs/2026-06-16.md",
     "research_reports/last_run.json"
   ],
   "web_research_used": true,
-  "exact_next_baby_step": "Decide whether version one should log only daily sensor readings or also store each irrigation runtime and rainfall adjustment.",
+  "exact_next_baby_step": "Define the smallest concrete daily log schema for version one, including field names for sensor reading, irrigation runtime, rainfall, and rain-delay status.",
   "git_action": "deferred to sync job"
 }

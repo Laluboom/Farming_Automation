@@ -8,6 +8,7 @@ This file should link research notes, explanations, and decisions for Farming_Au
 - [First Drip Tape Specification For An Outdoor Tomato Irrigation Prototype](pages/first-drip-tape-specification-for-outdoor-tomato-irrigation-prototype.md)
 - [First Wall Thickness For An Outdoor Tomato Drip Tape Prototype](pages/first-wall-thickness-for-outdoor-tomato-drip-tape-prototype.md)
 - [First Recheck Rule After A Tomato Drip-Irrigation Event](pages/first-recheck-rule-after-a-tomato-drip-irrigation-event.md)
+- [First Logging Boundary For A Beginner Tomato Irrigation Prototype](pages/first-logging-boundary-for-beginner-tomato-irrigation-prototype.md)
 - [First Threshold For An Outdoor Tomato Irrigation Prototype](pages/first-threshold-for-outdoor-tomato-irrigation.md)
 - [First Sensor Depth For An Outdoor Tomato Irrigation Prototype](pages/first-sensor-depth-for-outdoor-tomato-irrigation.md)
 - [First Runtime Rule For An Outdoor Tomato Drip-Irrigation Prototype](pages/first-runtime-rule-for-outdoor-tomato-drip-irrigation.md)
