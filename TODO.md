@@ -42,7 +42,7 @@ one exists this is a note, not a project.
 
 ---
 
-## 2. [BUG] Reconstruct the missing runtime-rule page — the 110-minute figure has no source
+## 2. `[DONE 2026-09-23]` Reconstruct the missing runtime-rule page — the 110-minute figure has no source
 
 `wiki/pages/first-runtime-rule-for-outdoor-tomato-drip-irrigation.md` does not exist
 and **was never committed** — it is absent from the repo's full history of added
