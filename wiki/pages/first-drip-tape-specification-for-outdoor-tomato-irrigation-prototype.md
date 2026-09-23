@@ -41,12 +41,11 @@ For the current beginner prototype, use one concrete starter tape specification:
 
 - This page treats Toro Aqua-Traxx as an example of a real tape family whose published specs are close enough to the local 0.45 gpm per 100 ft runtime assumption; the course is not claiming that only this brand will work.
 - The choice of 12-inch spacing is a beginner-friendly inference because it offers a concrete, common spacing while staying aligned with the current single-bed prototype scope.
-- The wall-thickness choice is not yet fixed by the course. If the first build needs a single placeholder, 12 mil is a reasonable middle option within the manufacturer's available sizes, but that thickness is not established here as a confirmed requirement.
+- The wall-thickness choice is now fixed at 10 mil by [First Wall Thickness For An Outdoor Tomato Drip Tape Prototype](./first-wall-thickness-for-outdoor-tomato-drip-tape-prototype.md), which supersedes the 12 mil placeholder earlier floated on this page.
 - This page does not yet prove that the chosen tape is the best option for every soil texture, mulch setup, row length, or tomato growth stage.
 
 ## What Still Needs To Be Chosen
 
-- One exact wall thickness instead of leaving that part of the tape spec open
 - One canonical tomato bed layout such as raised bed or flat field row
 - Whether the first hardware build should store only daily sensor readings or also each irrigation runtime and rainfall adjustment
 - Whether a second deeper sensor should remain a later upgrade or become part of version one

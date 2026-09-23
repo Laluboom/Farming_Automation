@@ -70,7 +70,7 @@ Do this before or alongside task 1 so the code is not encoding an unsourced cons
 
 ---
 
-## 3. [QUICK WIN ~15min] Fix the broken index link and the superseded 12 mil note
+## 3. `[DONE 2026-09-23]` Fix the broken index link and the superseded 12 mil note
 
 Two small, verified defects:
 
