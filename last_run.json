@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-23",
+  "tier": "04_early_stage_and_ideas",
+  "selected_by": "daily routine, weighted random",
+  "files_inspected": [
+    "REFERENCE.md",
+    "main_question.md",
+    "wiki/INDEX.md",
+    "wiki/CONVENTIONS.md",
+    "wiki/pages/simplest-first-automation-decision.md",
+    "wiki/pages/minimum-inputs-irrigation-prototype.md",
+    "wiki/pages/first-threshold-for-outdoor-tomato-irrigation.md",
+    "wiki/pages/first-sensor-depth-for-outdoor-tomato-irrigation.md",
+    "wiki/pages/first-recheck-rule-after-a-tomato-drip-irrigation-event.md",
+    "wiki/pages/first-drip-tape-specification-for-outdoor-tomato-irrigation-prototype.md",
+    "wiki/pages/first-wall-thickness-for-outdoor-tomato-drip-tape-prototype.md",
+    "wiki/pages/canonical-bed-layout-for-beginner-outdoor-tomato-irrigation-prototype.md",
+    "wiki/pages/first-logging-boundary-for-beginner-tomato-irrigation-prototype.md",
+    "research_reports/latest_report.md",
+    "research_reports/last_run.json",
+    "research_reports/run_logs/2026-06-04.md",
+    "research_reports/run_logs/2026-06-06.md",
+    "research_reports/run_logs/2026-06-07.md",
+    "research_reports/run_logs/2026-06-09.md",
+    "research_reports/run_logs/2026-06-11.md",
+    "research_reports/run_logs/2026-06-13.md",
+    "research_reports/run_logs/2026-06-15.md",
+    "research_reports/run_logs/2026-06-16.md",
+    "light_pest_control/main_question.md",
+    "light_pest_control/wiki/INDEX.md"
+  ],
+  "issues_confirmed": [
+    "Repo contains zero executable code: 26 .md files, 1 .pdf, 1 .json. A repo named Farming_Automation automates nothing.",
+    "wiki/INDEX.md:14 links to pages/first-runtime-rule-for-outdoor-tomato-drip-irrigation.md, which does not exist on disk and never appears in the repo's full history of added files.",
+    "That missing page is cited as evidence by five wiki pages: first-logging-boundary-...:57, first-drip-tape-specification-...:57, first-wall-thickness-...:54, canonical-bed-layout-...:60, first-recheck-rule-...:56.",
+    "The 110-minute irrigation runtime is load-bearing (first-recheck-rule-...:9 and :16, first-wall-thickness-...:15, canonical-bed-layout-...:15) but its only derivation lived in the missing page, so the number is currently unsourced.",
+    "research_reports/run_logs/ jumps from 2026-06-09.md to 2026-06-11.md with no log in between; the run that created the runtime page lost both its page and its log.",
+    "wiki/pages/first-drip-tape-specification-...:44 still states wall thickness 'is not yet fixed by the course' and floats 12 mil, but a later run fixed it at 10 mil (first-wall-thickness-...:26) - stale contradiction on a purchasable part.",
+    "light_pest_control/wiki/INDEX.md:7 is a bare empty '-' bullet with no pages; line 3 still names the folder 'light_effects_on_insects' though the directory is light_pest_control.",
+    "REFERENCE.md (pre-review) was a chat 'Cold Start Summary' about plant-disease datasets, describing the AI-diagnosis question that no wiki page pursues - it did not describe the repo or the irrigation prototype that all 9 pages build.",
+    "Research output stopped at 2026-06-16 (latest_report.md, research_reports/last_run.json); no new wiki page in ~3 months, while light_pest_control scaffolding was added 2026-09-21."
+  ],
+  "browser_checked": false,
+  "proposed_tasks": [
+    "[IMPROVEMENT] Write irrigation_rule.py implementing decide(tension_cb, forecast_rain_in_24h, hours_since_last_irrigation) with the already-decided constants; CLI prints a decision and appends a row to irrigation_log.csv",
+    "[BUG] Reconstruct the missing first-runtime-rule page from the surviving Penn State figure at first-drip-tape-specification-...:20 and verify the 110-minute number",
+    "[QUICK WIN ~15min] Fix the broken wiki/INDEX.md:14 link and the superseded 12 mil placeholder at first-drip-tape-specification-...:44",
+    "[DESIGN] Decide whether light_pest_control/ splits into its own repo or is cut back to the PDF, instead of sitting as a second untouched front",
+    "[DOCS] Collapse the nine wiki pages into one PROTOTYPE_SPEC.md build sheet holding every settled number"
+  ],
+  "verdict": "REVIVE",
+  "next_review": "2026-10-03"
+}
