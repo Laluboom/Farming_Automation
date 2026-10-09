@@ -1,72 +1,73 @@
-# Review Brief — Farming_Automation — 2026-09-23
+# Daily review — Farming_Automation (2026-10-09)
 
-**Verdict: REVIVE.** Not a close call, and not the usual early-stage verdict.
+**Verdict: PARK.** Changed from the 2026-09-23 review's REVIVE, deliberately.
 
 ## What I looked at
 
-All 26 markdown files: both main questions, all nine wiki decision pages in full, the
-conventions files, `latest_report.md`, the research agent's own `last_run.json`, eight
-dated run logs, and the `light_pest_control/` folder. No browser check — there is no
-frontend, and no code at all.
+All ten wiki pages end to end (not skimmed — the numbers in them are the whole point),
+`main_question.md`, both `last_run.json` files, the research agent's final report and the
+run log for 2026-06-10, the `light_pest_control` scaffold, and the full git history. No
+browser check: there is no frontend, and no code at all.
 
-## What's actually here
+## The thing worth knowing
 
-Zero executable files. 26 `.md`, one PDF, one JSON, 2.3 MB. By the tier's own test — a
-repo called `Farming_Automation` containing only markdown is a note, not an automation
-— this should be a RETIRE or a PARK.
+**The specification as written can over-water the bed by 2.2x, and I can show the
+arithmetic from the repo's own numbers.**
 
-It isn't, and the reason is worth being precise about. An automated research agent ran
-daily from 2026-06-04 to 2026-06-16 and did the thing these stub repos almost never
-do: it converged. Each day it answered one narrow sub-question and fixed one more
-variable. By day nine it had reduced "how can AI understand plants" down to a
-completely specified physical object — a 30-inch raised bed with one trellised tomato
-row, 5/8-inch drip tape at 12-inch emitter spacing and 10 mil wall, a tension sensor
-at 6 inches, irrigate at 25–30 centibars for 110 minutes, skip if a quarter inch of
-rain is forecast inside 24 hours, recheck the next day. Every number is sourced to a
-US extension service, and every page carefully separates confirmed facts from
-inference.
+The 110-minute runtime is not a free-standing value. It was derived by assuming exactly
+three irrigation events per week — `first-runtime-rule-...:26` says "about 3 irrigation
+events per week, spaced roughly every 2 to 3 days" — and dividing Penn State's weekly
+figure by three. The 1-inch-per-week target only holds at that frequency.
 
-That is a buildable spec. There is no research left to do before version one, and the
-research agent knew it: the final report's "exact next baby step"
-(`research_reports/latest_report.md:9`) is to define the log schema — a coding task,
-not a research task. The project stalled precisely at the point where it had to stop
-writing markdown and start writing code, and then nothing happened for three months.
+But nothing enforces it, and the recheck rule contradicts it outright:
+`first-recheck-rule-...:27-29` permits another full 110-minute run **the next day** if the
+6-inch sensor has dried back to 25–30 cb. On a 30-inch bed in hot weather that is
+plausible daily. Using the runtime page's own figure of 348 minutes of drip time per inch,
+each event is 0.316 in, so:
 
-## What I found wrong
+- 3 events/week → 0.95 in (on target)
+- 7 events/week → **2.21 in** (2.2x target)
 
-One real defect, and it is worse than a broken link.
-`wiki/pages/first-runtime-rule-for-outdoor-tomato-drip-irrigation.md` does not exist —
-and it never did. It is absent from the repo's entire history of added files. But
-`wiki/INDEX.md:14` links to it and five separate wiki pages cite it as evidence. The
-110-minute runtime, which is the single most load-bearing number in the whole
-prototype, came from that page and now has no surviving derivation. The run logs
-confirm the shape of the loss: they jump from `2026-06-09.md` straight to
-`2026-06-11.md`, so that day's page *and* its log both failed to get committed, while
-every later day happily cited the ghost. It is recoverable — the Penn State figure it
-was built on survives as a quotation at
-`first-drip-tape-specification-...:20` — but until someone redoes that arithmetic, the
-central constant is folklore.
+Two pages disagree about whether back-to-back daily runs are legal, and no page anywhere
+caps weekly volume. This is also the reason the control function keeps not getting
+written: it needs a `TOO_SOON` branch, and **no page defines what interval is too soon.**
+Writing the code first would mean inventing that constant in Python and letting the
+research inherit it backwards. That is task 1, and it is a one-hour wiki page.
 
-Smaller: `first-drip-tape-specification-...:44` still says wall thickness is unfixed
-and suggests 12 mil, though a later page settled on 10 mil. `light_pest_control/` was
-bolted on 2026-09-21 with an empty wiki — a bare `-` bullet and the folder's old name
-— which is a second, unrelated front opening on the one repo that was finally ready to
-ship. And the old `REFERENCE.md` was a chat cold-start summary about plant-disease
-image datasets: a topic no wiki page ever pursued. I rewrote it to describe the repo
-as it actually is.
+## Why PARK and not REVIVE again
+
+The last review ranked "write `irrigation_rule.py`" first. Sixteen days on it is
+untouched — while both 15-minute markdown chores from the same list were done within
+hours of the review, in `4c6af52` and `1f2ba6a`. That is a revealed preference worth
+reading honestly: the blocker was never a missing function.
+
+What this research specifies is physical. A 30-inch raised bed, Toro tape at 10 mil, a
+tension sensor buried at 6 inches. There is no software-only version of this that is more
+than a calculator for numbers already written down in markdown. The research agent
+stopped on 2026-06-16 having chosen every value — it finished, it didn't stall.
+
+Not RETIRE, though, and I want to be clear about that: ten pages sourced to Penn State,
+Utah State, Oregon State, Missouri and UF IFAS, converging on an actionable shopping list
+and control rules, is a real artifact. It cost nothing to keep and it doesn't rot —
+extension-service agronomy will say the same thing next season. The restart condition is
+one sentence: **you own a bed and a tension sensor.** I put that at the top of
+`REFERENCE.md` so it is the first thing a future reader sees.
 
 ## What I'm proposing
 
-The top task is the only one that matters: write `irrigation_rule.py`, a pure decision
-function plus a CLI, using constants that are already chosen and cited. Working means
-`python irrigation_rule.py --tension 28 --rain 0.0 --last-run 2026-09-21` prints a
-decision and appends a row to a CSV. One session. No hardware, no network, no model.
+Leave-it-correct work, not a build-out. Task 1 is the frequency fix above — cheap now,
+expensive to rediscover from dead tomatoes. The quick win is the two wrong lines in
+`light_pest_control/wiki/INDEX.md` (pre-rename folder name, empty bullet), flagged last
+review and still there. Then the `PROTOTYPE_SPEC.md` one-pager, which matters *more* under
+PARK since re-entry cost is what decides whether a parked repo ever gets picked up. Then
+deciding `light_pest_control`'s fate — it's a second unstarted front, 83% of the repo by
+bytes, and arguably the more interesting question with a far cheaper bench prototype.
 
-Second is rebuilding the lost runtime page, so task one isn't hard-coding an unsourced
-number. The quick win is the broken index link plus the stale 12 mil note. Then a
-decision on whether `light_pest_control` splits out, and a consolidation of nine pages
-into one build sheet.
+The control function stays on the list as item 5, demoted and explicitly blocked on task
+1, reframed as a season-replay harness that reports weekly applied inches — which would
+have caught the 2.2x defect mechanically instead of by hand.
 
-If the next session produces no `.py` file, that is the signal to re-run this review as
-a PARK or RETIRE. The research is done; only the typing is missing, and three months
-of not typing is itself information.
+Also worth noting: the previous review's three doc defects are genuinely fixed. All ten
+index links resolve, the runtime page exists with its derivation rebuilt, and the 12-mil
+wall-thickness contradiction is gone. `REFERENCE.md` was still listing all three as open;
+I rewrote it.
