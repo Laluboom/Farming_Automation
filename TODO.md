@@ -60,7 +60,7 @@ Python and letting the research inherit it backwards.
 
 ---
 
-## 2. [QUICK WIN ~15min] Fix the two wrong lines in `light_pest_control/wiki/INDEX.md`
+## 2. `[DONE 2026-10-09]` Fix the two wrong lines in `light_pest_control/wiki/INDEX.md`
 
 The only remaining factual wrongness in the repo, and it is two lines:
 
